@@ -8,14 +8,9 @@ A QBCore pull-tab gambling resource with:
 - Multiple pull lines per ticket
 - Player must physically drag/pull each line
 - Server-side weighted prize selection
-- Money prizes
-- Item prizes
+- Item or Money prizes
 - Multiple different pull-tab types
-- Configurable odds
-- Configurable number of lines
-- Configurable image per ticket
-- QBCore usable items
-- Server validation so the NUI cannot decide the prize
+- Configurable odds and line numbers
 
 ## Installation
 
