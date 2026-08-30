@@ -1,5 +1,7 @@
 # KP Pull Tabs
 
+<img width="1920" height="1080" alt="kppulltabs" src="https://github.com/user-attachments/assets/b9a5723d-3622-435d-91d5-54cf2afddd61" />
+
 A QBCore pull-tab gambling resource with:
 
 - Custom pull-tab images
