@@ -1,0 +1,264 @@
+* {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: transparent;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+}
+
+.backdrop {
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    backdrop-filter: none;
+}
+
+.machine {
+    position: absolute;
+    width: min(1100px, 92vw);
+    max-height: 92vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 28px;
+    border-radius: 22px;
+    background: linear-gradient(145deg, #202020, #0c0c0c);
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: 0 30px 90px rgba(0,0,0,.65);
+    color: white;
+}
+
+.close {
+    position: absolute;
+    z-index: 20;
+    top: 12px;
+    right: 15px;
+    width: 38px;
+    height: 38px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,.08);
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.close:hover {
+    background: rgba(255,255,255,.18);
+}
+
+.top {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    opacity: .55;
+    font-weight: 700;
+}
+
+h1 {
+    margin: 6px 0;
+    font-size: 32px;
+}
+
+#progress {
+    opacity: .65;
+    font-size: 13px;
+}
+
+.tab-area {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    max-height: 57vh;
+    overflow-y: auto;
+    padding: 4px 3px;
+}
+
+.line {
+    position: relative;
+    min-height: 78px;
+    overflow: hidden;
+    border-radius: 13px;
+    background: #f4f0e7;
+    color: #171717;
+    border: 1px solid rgba(255,255,255,.2);
+}
+
+.prize {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #fff;
+    z-index: 1;
+}
+
+.prize .line-label {
+    font-size: 11px;
+    opacity: .5;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.prize .prize-text {
+    margin-top: 4px;
+    font-size: 23px;
+    font-weight: 900;
+}
+
+.cover {
+    position: absolute;
+    z-index: 3;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    background: #b5b5b5;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+}
+
+.cover-shade {
+    position: absolute;
+    inset: 0;
+    background: rgba(30,30,30,.34);
+}
+
+.pull-handle {
+    position: absolute;
+    z-index: 5;
+    left: 7px;
+    top: 8px;
+    bottom: 8px;
+    width: 88px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #d9d9d9, #999);
+    border: 2px solid rgba(0,0,0,.28);
+    box-shadow: 5px 0 12px rgba(0,0,0,.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    touch-action: none;
+}
+
+.pull-handle:active {
+    cursor: grabbing;
+}
+
+.pull-handle::after {
+    content: "PULL";
+    color: rgba(0,0,0,.62);
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 2px;
+    writing-mode: vertical-rl;
+}
+
+.line.locked .pull-handle {
+    cursor: default;
+}
+
+.line.revealed .cover {
+    display: none;
+}
+
+.line.revealed {
+    animation: reveal .35s ease;
+}
+
+@keyframes reveal {
+    from { transform: scale(.985); opacity: .65; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.instruction {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    opacity: .7;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.done {
+    min-width: 130px;
+    padding: 13px 18px;
+    border: 0;
+    border-radius: 10px;
+    font-weight: 900;
+    cursor: pointer;
+    background: #fff;
+    color: #111;
+    opacity: .3;
+}
+
+.done:not(:disabled) {
+    opacity: 1;
+}
+
+@media (max-width: 700px) {
+    .machine {
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .line {
+        min-height: 66px;
+    }
+
+    .pull-handle {
+        width: 70px;
+    }
+
+    .bottom {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .done {
+        width: 100%;
+    }
+}
