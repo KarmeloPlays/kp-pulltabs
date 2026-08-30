@@ -12,6 +12,8 @@ A QBCore pull-tab gambling resource with:
 - Multiple different pull-tab types
 - Configurable odds and line numbers
 
+<img width="1135" height="687" alt="FiveM_b3258_GTAProcess_yY4iroQCyE" src="https://github.com/user-attachments/assets/619cf9ef-5f06-4b62-9ded-e2f8579dc708" />
+
 ## Installation
 
 1. Put `kp-pulltabs` in your resources folder.
